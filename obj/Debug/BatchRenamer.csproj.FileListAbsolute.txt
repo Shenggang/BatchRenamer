@@ -1,0 +1,16 @@
+C:\Users\hushe\OneDrive\文档\Visual Studio 2015\Projects\BatchRenamer\BatchRenamer\bin\Debug\BatchRenamer.exe.config
+C:\Users\hushe\OneDrive\文档\Visual Studio 2015\Projects\BatchRenamer\BatchRenamer\bin\Debug\BatchRenamer.exe
+C:\Users\hushe\OneDrive\文档\Visual Studio 2015\Projects\BatchRenamer\BatchRenamer\bin\Debug\BatchRenamer.pdb
+C:\Users\hushe\OneDrive\文档\Visual Studio 2015\Projects\BatchRenamer\BatchRenamer\obj\Debug\BatchRenamer.csprojResolveAssemblyReference.cache
+C:\Users\hushe\OneDrive\文档\Visual Studio 2015\Projects\BatchRenamer\BatchRenamer\obj\Debug\MainWindow.g.cs
+C:\Users\hushe\OneDrive\文档\Visual Studio 2015\Projects\BatchRenamer\BatchRenamer\obj\Debug\App.g.cs
+C:\Users\hushe\OneDrive\文档\Visual Studio 2015\Projects\BatchRenamer\BatchRenamer\obj\Debug\BatchRenamer_MarkupCompile.cache
+C:\Users\hushe\OneDrive\文档\Visual Studio 2015\Projects\BatchRenamer\BatchRenamer\obj\Debug\BatchRenamer_MarkupCompile.lref
+C:\Users\hushe\OneDrive\文档\Visual Studio 2015\Projects\BatchRenamer\BatchRenamer\obj\Debug\MainWindow.baml
+C:\Users\hushe\OneDrive\文档\Visual Studio 2015\Projects\BatchRenamer\BatchRenamer\obj\Debug\BatchRenamer.g.resources
+C:\Users\hushe\OneDrive\文档\Visual Studio 2015\Projects\BatchRenamer\BatchRenamer\obj\Debug\BatchRenamer.Properties.Resources.resources
+C:\Users\hushe\OneDrive\文档\Visual Studio 2015\Projects\BatchRenamer\BatchRenamer\obj\Debug\BatchRenamer.csproj.GenerateResource.Cache
+C:\Users\hushe\OneDrive\文档\Visual Studio 2015\Projects\BatchRenamer\BatchRenamer\obj\Debug\BatchRenamer.exe
+C:\Users\hushe\OneDrive\文档\Visual Studio 2015\Projects\BatchRenamer\BatchRenamer\obj\Debug\BatchRenamer.pdb
+C:\Users\hushe\OneDrive\文档\Visual Studio 2015\Projects\BatchRenamer\BatchRenamer\obj\Debug\SettingsWindow.g.cs
+C:\Users\hushe\OneDrive\文档\Visual Studio 2015\Projects\BatchRenamer\BatchRenamer\obj\Debug\SettingsWindow.baml

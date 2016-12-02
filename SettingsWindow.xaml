@@ -1,0 +1,34 @@
+﻿<Window x:Class="BatchRenamer.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BatchRenamer"
+        mc:Ignorable="d"
+        Title="SettingsWindow" Height="642" Width="530">
+    <Grid Height="600" Width="500">
+        <CheckBox x:Name="nameCB" Content="Rename" HorizontalAlignment="Left" Margin="10,8,0,0" VerticalAlignment="Top" Checked="ReverseRenameBlock" Unchecked="ReverseRenameBlock"/>
+        <CheckBox x:Name="extensionCB" Content="Extension change" HorizontalAlignment="Left" Margin="10,310,0,0" VerticalAlignment="Top" Checked="ReverseExtensionBlock" Unchecked="ReverseExtensionBlock"/>
+        
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left"  Margin="10,35,0,0" VerticalAlignment="Top">
+            <ScrollViewer x:Name="nameSV" HorizontalAlignment="Left" VerticalAlignment="Top" IsEnabled="False" VerticalScrollBarVisibility="Visible" Height="265" Width="480">
+                <Canvas x:Name="nameCanvas" Height="10" VerticalAlignment="Top"/>
+            </ScrollViewer>
+        </Border>
+        <Button x:Name="stringButton" Content="Add a string" HorizontalAlignment="Left" Margin="100,5,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="addStringComponent"/>
+        <Button x:Name="counterButton" Content="Add a counter" HorizontalAlignment="Left" Margin="200,5,0,0" VerticalAlignment="Top" Width="90" IsEnabled="False" Click="addCounterComponent"/>
+        <Button x:Name="rotorButton" Content="Add a rotor" HorizontalAlignment="Left" Margin="315,5,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="addRotorComponent"/>
+        <Button x:Name="deleteCompButton" Content="Delete" HorizontalAlignment="Left" Margin="428,5,0,0" VerticalAlignment="Top" Width="50" IsEnabled="False" Click="DeleteNameComponent" />
+
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left"  Margin="10,336,0,0" VerticalAlignment="Top">
+            <ScrollViewer x:Name="extensionSV" HorizontalAlignment="Left" VerticalAlignment="Top" IsEnabled="False" VerticalScrollBarVisibility="Visible" Height="245" Width="319">
+                <Canvas x:Name="extensionCanvas" />
+            </ScrollViewer>
+        </Border>
+        <Button x:Name="mappingButton" Content="Add a map" HorizontalAlignment="Left" Margin="382,336,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="AddExtensionMap"/>
+        <Button x:Name="deleteMappingButton" Content="Delete" HorizontalAlignment="Left" Margin="382,382,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False"/>
+        <Button x:Name="saveButton" Content="Save" HorizontalAlignment="Left" Margin="382,520,0,0" VerticalAlignment="Top" Width="75" Click="SaveDetailsAndClose"/>
+        <Button x:Name="cancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="382,563,0,0" VerticalAlignment="Top" Width="75" Click="CancelChangeAndClose"/>
+
+    </Grid>
+</Window>
