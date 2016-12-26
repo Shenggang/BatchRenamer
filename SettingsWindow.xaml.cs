@@ -25,13 +25,15 @@ namespace BatchRenamer
         private List<NameComponent> componentList = new List<NameComponent>();
         private bool isCancelled = true;
 
-        public SettingsWindow(List<NameComponent> list, bool[] boxSelected)
+        public SettingsWindow(List<NameComponent> list,ExtensionMapperList mappers, bool[] boxSelected)
         {
             InitializeComponent();
             componentList = list;
+            maps = mappers;
             nameCB.IsChecked = boxSelected[0];
             extensionCB.IsChecked = boxSelected[1];
             CreateItems();
+            CreateExtensionMaps();
         }
 
         public List<NameComponent> ComponentList

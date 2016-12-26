@@ -25,6 +25,7 @@ namespace BatchRenamer
     {
         private List<String> fileList = new List<string>();
         private List<NameComponent> componentList = new List<NameComponent>();
+        private ExtensionMapperList maps = new ExtensionMapperList();
         private bool[] boxSelected = { false, false };
 
         private SettingsWindow settings;
@@ -78,7 +79,7 @@ namespace BatchRenamer
 
         private void OpenRenameRules(object sender, RoutedEventArgs e)
         {
-            settings = new SettingsWindow(componentList, boxSelected);
+            settings = new SettingsWindow(componentList, maps, boxSelected);
             settings.Show();
             settings.Closed += getSettings;
         }
@@ -88,7 +89,6 @@ namespace BatchRenamer
             SettingsWindow settings = (SettingsWindow)sender;
             componentList = settings.ComponentList;
             boxSelected = settings.BoxSelected;
-            System.Diagnostics.Debug.WriteLine(componentList.Count);
         }
 
         private void MoveUp(object sender, RoutedEventArgs e)
