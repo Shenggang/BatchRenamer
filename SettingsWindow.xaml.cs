@@ -73,12 +73,30 @@ namespace BatchRenamer
         private Canvas createNameComponent(int index)
         {
             Canvas canvas = new Canvas();
-            Border border = new Border();
+            Border border = addInBorder(480, 35);
             canvas.Width = 480;
-            canvas.Height = 30;
-            Canvas.SetLeft(border, 5);
-            Canvas.SetTop(canvas, 10 + index * 40);
+            canvas.Height = 40;
+            Canvas.SetTop(canvas, 5 + index * 40);
+            Canvas.SetTop(border, 0);
+            canvas.Children.Add(border);
             return canvas;
+        }
+
+        private Border addInBorder(double width, double height)
+        {
+            Border border = new Border();
+            border.Width = width;
+            border.Height = height;
+            border.BorderBrush = Brushes.Black;
+            border.BorderThickness = new Thickness(0, 0, 0, 1);
+            return border;
+        }
+
+        private void initialiseTextBox(TextBox tb, string text)
+        {
+            tb.Text = text;
+            tb.AcceptsReturn = false;
+            tb.AcceptsTab = false;
         }
 
         private void addString(NameComponent component)
@@ -87,16 +105,15 @@ namespace BatchRenamer
             Canvas canvas = createNameComponent(componentList.IndexOf(com));
             TextBox textBox = new TextBox();
             Label label = new Label();
+            AddComponentsToCanvas(canvas, textBox, label);
             label.Content = "String:";
-            canvas.Children.Add(textBox);
-            canvas.Children.Add(label);
+
             textBox.TextChanged += StringTextChanged;
             textBox.Width = 300;
             Canvas.SetLeft(label, 5);
             Canvas.SetLeft(textBox, 100);
-            Canvas.SetTop(textBox, 5);
             nameCanvas.Children.Add(canvas);
-            textBox.Text = com.Content;
+            initialiseTextBox(textBox, com.Content);
             EnlargeCanvas(nameCanvas, 40);
         }
 
@@ -109,10 +126,8 @@ namespace BatchRenamer
             TextBox startBox = new TextBox();
             TextBox stepBox = new TextBox();
 
-            canvas.Children.Add(startLabel);
-            canvas.Children.Add(stepLabel);
-            canvas.Children.Add(startBox);
-            canvas.Children.Add(stepBox);
+            AddComponentsToCanvas(canvas, startBox, startLabel);
+            AddComponentsToCanvas(canvas, stepBox, stepLabel);
 
             startBox.PreviewTextInput += handleNonNurmeric;
             stepBox.PreviewTextInput += handleNonNurmeric;
@@ -128,11 +143,9 @@ namespace BatchRenamer
             Canvas.SetLeft(startBox, 100);
             Canvas.SetLeft(stepLabel, 220);
             Canvas.SetLeft(stepBox, 340);
-            Canvas.SetTop(startBox, 5);
-            Canvas.SetTop(stepBox, 5);
             nameCanvas.Children.Add(canvas);
-            startBox.Text = com.StartNumber.ToString();
-            stepBox.Text = com.Step.ToString();
+            initialiseTextBox(startBox, com.StartNumber.ToString());
+            initialiseTextBox(stepBox, com.Step.ToString());
             EnlargeCanvas(nameCanvas, 40);
         }
 
@@ -143,19 +156,16 @@ namespace BatchRenamer
             Label label = new Label();
             label.Content = "String set: ";
             TextBox stringSetBox = new TextBox();
-
-            canvas.Children.Add(label);
-            canvas.Children.Add(stringSetBox);
+            AddComponentsToCanvas(canvas, stringSetBox, label);
 
             stringSetBox.Width = 350;
             stringSetBox.TextChanged += StringSetChanged;
 
             Canvas.SetLeft(label, 5);
             Canvas.SetLeft(stringSetBox, 85);
-            Canvas.SetTop(stringSetBox, 5);
 
             nameCanvas.Children.Add(canvas);
-            stringSetBox.Text = com.StringSet;
+            initialiseTextBox(stringSetBox, com.StringSet);
             EnlargeCanvas(nameCanvas, 40);
         }
 
@@ -163,8 +173,15 @@ namespace BatchRenamer
         {
             TextBox tb = (TextBox)sender;
             int index = nameCanvas.Children.IndexOf((UIElement)tb.Parent);
+            int position = tb.SelectionStart;
             RotorComponent component = (RotorComponent)componentList[index];
             component.StringSet = tb.Text;
+            if (!component.StringSet.Equals(tb.Text))
+            {
+                tb.Text = component.StringSet;
+                e.Handled = true;
+                tb.SelectionStart = position - 1;
+            }
         }
 
         private void StepNumberChanged(object sender, TextChangedEventArgs e)
@@ -199,8 +216,15 @@ namespace BatchRenamer
         {
             TextBox tb = (TextBox)sender;
             int index = nameCanvas.Children.IndexOf((UIElement)tb.Parent);
+            int position = tb.SelectionStart;
             StringComponent component = (StringComponent)componentList[index];
             component.Content = tb.Text;
+            if (!component.Content.Equals(tb.Text))
+            {
+                tb.Text = component.Content;
+                e.Handled = true;
+                tb.SelectionStart = position-1;
+            }
         }
 
         private void ReverseRenameBlock(object sender, RoutedEventArgs e)

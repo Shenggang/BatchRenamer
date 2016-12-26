@@ -25,7 +25,7 @@ namespace BatchRenamer
     {
         private List<String> fileList = new List<string>();
         private List<NameComponent> componentList = new List<NameComponent>();
-        private ExtensionMapperList maps = new ExtensionMapperList();
+        private ExtensionMapperList extensionMaps = new ExtensionMapperList();
         private bool[] boxSelected = { false, false };
 
         private SettingsWindow settings;
@@ -39,7 +39,6 @@ namespace BatchRenamer
         private void MakeSettings()
         {
             listBox.SelectionMode = SelectionMode.Extended;
-            
         }
 
         private void AddFile(object sender, RoutedEventArgs e)
@@ -79,7 +78,7 @@ namespace BatchRenamer
 
         private void OpenRenameRules(object sender, RoutedEventArgs e)
         {
-            settings = new SettingsWindow(componentList, maps, boxSelected);
+            settings = new SettingsWindow(componentList, extensionMaps, boxSelected);
             settings.Show();
             settings.Closed += getSettings;
         }
@@ -88,6 +87,7 @@ namespace BatchRenamer
         {
             SettingsWindow settings = (SettingsWindow)sender;
             componentList = settings.ComponentList;
+            extensionMaps = settings.ExtensionMapperList;
             boxSelected = settings.BoxSelected;
         }
 
@@ -148,9 +148,9 @@ namespace BatchRenamer
         private int[] bubbleSort(int[] list)
         {
             int length = list.Length;
-            for (int i = 0; i<length;i++)
+            for (int i = 0; i < length; i++)
             {
-                for(int j = i; j<length; j++)
+                for (int j = i; j < length; j++)
                 {
                     if (list[i] > list[j])
                     {

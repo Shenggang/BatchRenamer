@@ -21,14 +21,14 @@
         <Button x:Name="deleteCompButton" Content="Delete" HorizontalAlignment="Left" Margin="428,5,0,0" VerticalAlignment="Top" Width="50" IsEnabled="False" Click="DeleteNameComponent" />
 
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left"  Margin="10,336,0,0" VerticalAlignment="Top">
-            <ScrollViewer x:Name="extensionSV" HorizontalAlignment="Left" VerticalAlignment="Top" IsEnabled="False" VerticalScrollBarVisibility="Visible" Height="245" Width="320">
-                <Canvas x:Name="extensionCanvas" />
+            <ScrollViewer x:Name="extensionSV" HorizontalAlignment="Left" VerticalAlignment="Top" IsEnabled="False" VerticalScrollBarVisibility="Visible" Height="245" Width="360">
+                <Canvas x:Name="extensionCanvas" Height="10" VerticalAlignment="Top"/>
             </ScrollViewer>
         </Border>
-        <Button x:Name="mappingButton" Content="Add a map" HorizontalAlignment="Left" Margin="382,336,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="AddExtensionMap"/>
-        <Button x:Name="deleteMappingButton" Content="Delete" HorizontalAlignment="Left" Margin="382,382,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="RemoveExtensionMap"/>
-        <Button x:Name="saveButton" Content="Save" HorizontalAlignment="Left" Margin="382,520,0,0" VerticalAlignment="Top" Width="75" Click="SaveDetailsAndClose"/>
-        <Button x:Name="cancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="382,563,0,0" VerticalAlignment="Top" Width="75" Click="CancelChangeAndClose"/>
+        <Button x:Name="mappingButton" Content="Add a map" HorizontalAlignment="Left" Margin="390,340,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="AddExtensionMap"/>
+        <Button x:Name="deleteMappingButton" Content="Delete" HorizontalAlignment="Left" Margin="390,386,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False" Click="RemoveExtensionMap"/>
+        <Button x:Name="saveButton" Content="Save" HorizontalAlignment="Left" Margin="390,520,0,0" VerticalAlignment="Top" Width="75" Click="SaveDetailsAndClose"/>
+        <Button x:Name="cancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="390,563,0,0" VerticalAlignment="Top" Width="75" Click="CancelChangeAndClose"/>
 
     </Grid>
 </Window>

@@ -10,7 +10,7 @@ namespace BatchRenamer
     {
         public abstract class NameComponent
         {
-            private static char[] invalidChars = new char[] { '\\', '/', '<', '>', ':', '*', '?', '|', ' ' };
+            private static char[] invalidChars = new char[] { '\\', '/', '<', '>', ':', '*', '?', '|' };
 
             public abstract string ComponentToString(int index);
 
