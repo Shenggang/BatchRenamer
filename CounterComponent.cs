@@ -32,6 +32,12 @@ namespace BatchRenamer
                 set { step = value; }
             }
 
+            public override void InitialiseNeededValues(object o)
+            {
+                int count = (int)o;
+                CalculateMinimumDigit(count);
+            }
+
             public void CalculateMinimumDigit(int count)
             {
                 minDigit = (int) Math.Ceiling(Math.Log10((startNumber + (count - 1) * step)));

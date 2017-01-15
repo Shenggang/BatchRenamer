@@ -58,6 +58,7 @@
     <Compile Include="CounterComponent.cs" />
     <Compile Include="ExtensionMapper.cs" />
     <Compile Include="ExtensionMapperList.cs" />
+    <Compile Include="MainWindowRename.cs" />
     <Compile Include="NameComponent.cs" />
     <Compile Include="RotorComponent.cs" />
     <Compile Include="SettingsWindow.cs" />

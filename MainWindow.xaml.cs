@@ -163,11 +163,6 @@ namespace BatchRenamer
             return list;
         }
 
-        private void DoRename(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void AccendSort(object sender, RoutedEventArgs e)
         {
             fileList.Sort();
