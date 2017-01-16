@@ -24,7 +24,7 @@ namespace BatchRenamer
     public partial class MainWindow : Window
     {
         private List<String> fileList = new List<string>();
-        private List<NameComponent> componentList = new List<NameComponent>();
+        private NameComponentList componentList = new NameComponentList();
         private ExtensionMapperList extensionMaps = new ExtensionMapperList();
         private bool[] boxSelected = { false, false };
 

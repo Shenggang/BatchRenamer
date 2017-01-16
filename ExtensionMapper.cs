@@ -11,7 +11,7 @@ namespace BatchRenamer
     {
         public class ExtensionMapper
         {
-            private static char[] invalidChars = new char[] { '\\', '/', '<', '>', '|', ' ' };
+            private static char[] invalidChars = new char[] { '\\', '/', '<', '>', '|', ' ' , '.' };
 
             public static string ValidateExtension(string name)
             {
@@ -63,7 +63,7 @@ namespace BatchRenamer
                 {
                     return OutputExtension;
                 }
-                return null;
+                return "ExtensionNotMatched";
             }
 
             private bool checkIfMatch(String extension)

@@ -23,7 +23,7 @@ namespace BatchRenamer
                 set { this.content = ValidateName(value); }
             }
 
-            public override void InitialiseNeededValues(object o) { }
+            public override void InitialiseRequiredFields(object o) { }
 
             public override string ComponentToString(int index)
             {

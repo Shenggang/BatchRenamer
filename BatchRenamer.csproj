@@ -60,6 +60,7 @@
     <Compile Include="ExtensionMapperList.cs" />
     <Compile Include="MainWindowRename.cs" />
     <Compile Include="NameComponent.cs" />
+    <Compile Include="NameComponentList.cs" />
     <Compile Include="RotorComponent.cs" />
     <Compile Include="SettingsWindow.cs" />
     <Compile Include="SettingsWindow.xaml.cs">

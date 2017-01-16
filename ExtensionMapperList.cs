@@ -40,15 +40,19 @@ namespace BatchRenamer
 
             public String getResultExtensoin(string extension)
             {
-                foreach ( ExtensionMapper em in list)
+                String s = extension;
+                if (list.Count != 0)
                 {
-                    String s = em.getExtensionIfMatch(extension);
-                    if (s != null)
+                    foreach (ExtensionMapper em in list)
                     {
-                        return s;
+                        string result = em.getExtensionIfMatch(extension);
+                        if (!result.Equals("ExtensionNotMatched"))
+                        {
+                            s = result;
+                        }
                     }
                 }
-                return extension;
+                return s;
             }
         }
     }

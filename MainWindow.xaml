@@ -11,38 +11,38 @@
             <ListBox x:Name="listBox" Height="451"  Width="680"/>
         </ScrollViewer>
         <Button x:Name="addButton" Content="Open Files" Canvas.Left="19" Canvas.Top="26" Width="110" Height="42" FontSize="16" FontFamily="Papyrus" Click="AddFile" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
-        <Button x:Name="upButton" Content="↑" Width="17" Canvas.Left="742" Canvas.Top="91" Height="34" FontFamily="Segoe Script" FontSize="20" Click="MoveUp" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" BorderThickness="0" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Foreground="#FF00FF3A">
+        <Button x:Name="upButton" Content="↑" Width="17" Canvas.Left="742" Canvas.Top="91" Height="34" FontFamily="Segoe Script" FontSize="20" Click="MoveUp" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" BorderThickness="0" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" Foreground="#FF00FF3A" ToolTip="Move Up">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="2"/>
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="downButton" Content="↓" Width="17" Canvas.Left="742" Canvas.Top="148" Height="34" FontSize="20" Click="MoveDown" Foreground="#FF00FF3A" FontFamily="Segoe Script" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+        <Button x:Name="downButton" Content="↓" Width="17" Canvas.Left="742" Canvas.Top="148" Height="34" FontSize="20" Click="MoveDown" Foreground="#FF00FF3A" FontFamily="Segoe Script" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" BorderThickness="0" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" ToolTip="Move Down">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="2"/>
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="executeButton" Content="▶" Canvas.Left="736" Canvas.Top="423" Width="30" Height="31" FontFamily="Yu Gothic" FontSize="18" Click="DoRename" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        <Button x:Name="executeButton" Content="▶" Canvas.Left="736" Canvas.Top="423" Width="30" Height="31" FontFamily="Yu Gothic" FontSize="18" Click="DoRename" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" ToolTip="Rename"/>
         <Button x:Name="ruleButton" Content="Rename Rules" Canvas.Left="149" Canvas.Top="26" Width="140" Height="42" FontFamily="Papyrus" FontSize="16" Click="OpenRenameRules" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
         <TextBlock x:Name="textBlock" Height="42" Canvas.Left="312" TextWrapping="Wrap" Text="" Canvas.Top="26" Width="298" FontFamily="Segoe UI Historic" FontSize="16"/>
-        <Button x:Name="accSortButton" Content="▂▅█" Canvas.Left="654" Canvas.Top="28" Width="46" Height="31" RenderTransformOrigin="0.5,0.5" Click="AccendSort" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" FontFamily="MingLiU_HKSCS-ExtB">
+        <Button x:Name="accSortButton" Content="▂▅█" Canvas.Left="654" Canvas.Top="28" Width="46" Height="31" RenderTransformOrigin="0.5,0.5" Click="AccendSort" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" FontFamily="MingLiU_HKSCS-ExtB" ToolTip="Ascend Sort">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="1.8"/>
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="decSortButton" Content="█▅▂" Width="46" Height="31" Canvas.Left="723" Canvas.Top="28" RenderTransformOrigin="0.5,0.5" Click="DecendSort" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" FontFamily="MingLiU_HKSCS-ExtB">
+        <Button x:Name="decSortButton" Content="█▅▂" Width="46" Height="31" Canvas.Left="723" Canvas.Top="28" RenderTransformOrigin="0.5,0.5" Click="DecendSort" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" FontFamily="MingLiU_HKSCS-ExtB" ToolTip="Decend Sort">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleY="1.8"/>
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button x:Name="deleteButton" Content="✘" Width="34" Canvas.Left="732" Canvas.Top="207" Height="34" Click="DeleteItems" FontFamily="Cambria" FontSize="16" Foreground="Red" BorderThickness="0" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        <Button x:Name="deleteButton" Content="✘" Width="34" Canvas.Left="732" Canvas.Top="207" Height="34" Click="DeleteItems" FontFamily="Cambria" FontSize="16" Foreground="Red" BorderThickness="0" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" ToolTip="Remove"/>
 
     </Canvas>
 </Window>

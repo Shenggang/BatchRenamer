@@ -32,7 +32,7 @@ namespace BatchRenamer
                 set { step = value; }
             }
 
-            public override void InitialiseNeededValues(object o)
+            public override void InitialiseRequiredFields(object o)
             {
                 int count = (int)o;
                 CalculateMinimumDigit(count);

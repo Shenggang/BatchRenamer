@@ -14,7 +14,7 @@ namespace BatchRenamer
 
             public abstract string ComponentToString(int index);
 
-            public abstract void InitialiseNeededValues(object o);
+            public abstract void InitialiseRequiredFields(object o);
 
             public static char[] InvalidCharacters
             {

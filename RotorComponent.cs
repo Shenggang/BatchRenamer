@@ -44,7 +44,7 @@ namespace BatchRenamer
                 get { return stringSet.Length; }
             }
 
-            public override void InitialiseNeededValues(object o) { }
+            public override void InitialiseRequiredFields(object o) { }
 
             public override string ComponentToString(int index)
             {

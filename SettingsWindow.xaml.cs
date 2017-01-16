@@ -22,10 +22,10 @@ namespace BatchRenamer
      */
     public partial class SettingsWindow : Window
     {
-        private List<NameComponent> componentList = new List<NameComponent>();
+        private NameComponentList componentList;
         private bool isCancelled = true;
 
-        public SettingsWindow(List<NameComponent> list,ExtensionMapperList mappers, bool[] boxSelected)
+        public SettingsWindow(NameComponentList list,ExtensionMapperList mappers, bool[] boxSelected)
         {
             InitializeComponent();
             componentList = list;
@@ -36,7 +36,7 @@ namespace BatchRenamer
             CreateExtensionMaps();
         }
 
-        public List<NameComponent> ComponentList
+        public NameComponentList ComponentList
         {
             get { return componentList; }
         }
@@ -53,7 +53,7 @@ namespace BatchRenamer
 
         private void CreateItems()
         {
-            foreach(NameComponent c in componentList)
+            foreach(NameComponent c in componentList.getList())
             {
                 if (c is StringComponent)
                 {
@@ -102,7 +102,7 @@ namespace BatchRenamer
         private void addString(NameComponent component)
         {
             StringComponent com = (StringComponent)component;
-            Canvas canvas = createNameComponent(componentList.IndexOf(com));
+            Canvas canvas = createNameComponent(componentList.getList().IndexOf(com));
             TextBox textBox = new TextBox();
             Label label = new Label();
             AddComponentsToCanvas(canvas, textBox, label);
@@ -120,7 +120,7 @@ namespace BatchRenamer
         private void addCounter(NameComponent component)
         {
             CounterComponent com = (CounterComponent)component;
-            Canvas canvas = createNameComponent(componentList.IndexOf(com));
+            Canvas canvas = createNameComponent(componentList.getList().IndexOf(com));
             Label startLabel = new Label();
             Label stepLabel = new Label();
             TextBox startBox = new TextBox();
@@ -152,7 +152,7 @@ namespace BatchRenamer
         private void addRotor(NameComponent component)
         {
             RotorComponent com = (RotorComponent)component;
-            Canvas canvas = createNameComponent(componentList.IndexOf(com));
+            Canvas canvas = createNameComponent(componentList.getList().IndexOf(com));
             Label label = new Label();
             label.Content = "String set: ";
             TextBox stringSetBox = new TextBox();
@@ -174,7 +174,7 @@ namespace BatchRenamer
             TextBox tb = (TextBox)sender;
             int index = nameCanvas.Children.IndexOf((UIElement)tb.Parent);
             int position = tb.SelectionStart;
-            RotorComponent component = (RotorComponent)componentList[index];
+            RotorComponent component = (RotorComponent)componentList.getList()[index];
             component.StringSet = tb.Text;
             if (!component.StringSet.Equals(tb.Text))
             {
@@ -188,16 +188,22 @@ namespace BatchRenamer
         {
             TextBox tb = (TextBox)sender;
             int index = nameCanvas.Children.IndexOf((UIElement)tb.Parent);
-            CounterComponent component = (CounterComponent)componentList[index];
-            component.Step = int.Parse(tb.Text);
+            CounterComponent component = (CounterComponent)componentList.getList()[index];
+            if (!tb.Text.Equals(""))
+            {
+                component.Step = int.Parse(tb.Text);
+            }
         }
 
         private void StartNumberChanged(object sender, TextChangedEventArgs e)
         {
             TextBox tb = (TextBox)sender;
             int index = nameCanvas.Children.IndexOf((UIElement)tb.Parent);
-            CounterComponent component = (CounterComponent)componentList[index];
-            component.StartNumber = int.Parse(tb.Text);
+            CounterComponent component = (CounterComponent)componentList.getList()[index];
+            if (!tb.Text.Equals(""))
+            {
+                component.StartNumber = int.Parse(tb.Text);
+            }
         }
 
         private void handleNonNurmeric(object sender, TextCompositionEventArgs e)
@@ -217,7 +223,7 @@ namespace BatchRenamer
             TextBox tb = (TextBox)sender;
             int index = nameCanvas.Children.IndexOf((UIElement)tb.Parent);
             int position = tb.SelectionStart;
-            StringComponent component = (StringComponent)componentList[index];
+            StringComponent component = (StringComponent)componentList.getList()[index];
             component.Content = tb.Text;
             if (!component.Content.Equals(tb.Text))
             {
@@ -252,27 +258,29 @@ namespace BatchRenamer
 
         private void addStringComponent(object sender, RoutedEventArgs e)
         {
-            componentList.Add(new StringComponent(""));
-            addString(componentList.Last());
+            StringComponent c = new StringComponent("");
+            componentList.Add(c);
+            addString(c);
         }
 
         private void addCounterComponent(object sender, RoutedEventArgs e)
         {
-            componentList.Add(new CounterComponent(0, 1));
-            addCounter(componentList.Last());
+            CounterComponent c = new CounterComponent(0, 1);
+            componentList.Add(c);
+            addCounter(c);
         }
 
         private void addRotorComponent(object sender, RoutedEventArgs e)
         {
-            componentList.Add(new RotorComponent(new string[] { "" }));
-            addRotor(componentList.Last());
+            RotorComponent c = new RotorComponent(new string[] { "" });
+            componentList.Add(c);
+            addRotor(c);
         }
 
         private void DeleteNameComponent(object sender, RoutedEventArgs e)
         {
-            int index = componentList.Count - 1;
-            componentList.RemoveAt(index);
-            nameCanvas.Children.RemoveAt(index);
+            componentList.removeTheLast();
+            nameCanvas.Children.RemoveAt(nameCanvas.Children.Count - 1);
             EnlargeCanvas(nameCanvas, -40);
         }
 
