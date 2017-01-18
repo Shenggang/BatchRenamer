@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\hushe\OneDrive\文档\Visual Studio 2015\Projects\BatchRenamer\BatchRenamer\obj\Debug\
+C:\Users\hushe\OneDrive\文档\Visual Studio 2015\Projects\BatchRenamer\BatchRenamer\obj\Release\
 BatchRenamer
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\hushe\OneDrive\文档\Visual Studio 2015\Projects\BatchRenamer\BatchRenamer\App.xaml
 2-649523810
 
-191557963510
+19-1846521271
 13738642453
 MainWindow.xaml;SettingsWindow.xaml;
 
-False
+True
 
