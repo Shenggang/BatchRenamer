@@ -1,4 +1,7 @@
-﻿
+﻿/**************************************************************
+ * Copyright (c) 2017. Shenggang Hu.
+ * All rights reserved.
+ **************************************************************/
 namespace BatchRenamer
 {
     namespace RenameTools

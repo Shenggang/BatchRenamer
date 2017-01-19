@@ -1,4 +1,9 @@
-﻿using System;
+﻿/**************************************************************
+ * Copyright (c) 2017. Shenggang Hu.
+ * All rights reserved.
+ **************************************************************/
+
+using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 

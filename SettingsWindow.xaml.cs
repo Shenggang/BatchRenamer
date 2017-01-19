@@ -1,4 +1,9 @@
-﻿using System.Windows;
+﻿/**************************************************************
+ * Copyright (c) 2017. Shenggang Hu.
+ * All rights reserved.
+ **************************************************************/
+
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;

@@ -1,4 +1,9 @@
-﻿using System.Collections.Generic;
+﻿/**************************************************************
+ * Copyright (c) 2017. Shenggang Hu.
+ * All rights reserved.
+ **************************************************************/
+
+using System.Collections.Generic;
 
 namespace BatchRenamer
 {
